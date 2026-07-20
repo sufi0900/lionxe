@@ -781,6 +781,7 @@ const LionxeHero = () => {
             <a
               href="https://chatgpt.com/g/g-6a2ef958cc248191b9abddad7284c387-lionxe-r-audit-engine"
               target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex min-h-[50px] w-full items-center justify-center rounded-xl px-7 py-4 text-base font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 sm:w-auto"
               style={{
                 background: BRAND,
