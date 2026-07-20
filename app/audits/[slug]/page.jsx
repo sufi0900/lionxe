@@ -12,7 +12,7 @@ import {
 
 import SeoAndSchemaWrapper from "./SeoAndSchemaWrapper";
 import ReviewMicrodata     from "./ReviewMicrodata";
-import ReviewChildComp     from "./ReviewChildComp";
+// import ReviewChildComp     from "./ReviewChildComp";
 import { PageCacheProvider } from "@/React_Query_Caching/CacheProvider";
 
 // ── Revalidation ─────────────────────────────────────────────────────────────
@@ -68,7 +68,7 @@ export default async function AuditReviewPage({ params }) {
           <ReviewMicrodata data={data} />
 
           {/* Client component that renders the actual review UI */}
-          <ReviewChildComp serverData={data} params={params} />
+          {/* <ReviewChildComp serverData={data} params={params} /> */}
         </main>
       </PageCacheProvider>
     </>
