@@ -1,7 +1,7 @@
 // app/reviews/page.jsx
 import React from 'react';
 import StaticBlogsPageShell from '../blogs/StaticBlogsPageShell'; // Adjust path if shell is renamed
-import AllReviewsAggregated from './AllPosts';
+// import AllReviewsAggregated from './AllPosts';
 import Script from "next/script";
 import { client } from "@/sanity/lib/client";
 import { redisHelpers } from '@/app/lib/redis';
@@ -180,10 +180,10 @@ export default async function ReviewsPage() {
         dangerouslySetInnerHTML={breadcrumbSchema()}
       />
       
-      <StaticBlogsPageShell initialServerData={initialServerData}>
-        <AllReviewsAggregated
+      <StaticBlogsPageShell initialServerData={initialServerData} children={undefined}>
+        {/* <AllReviewsAggregated
           initialServerData={initialServerData}
-        />
+        /> */}
       </StaticBlogsPageShell>
     </>
   );
