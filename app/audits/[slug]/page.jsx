@@ -65,7 +65,7 @@ export default async function AuditReviewPage({ params }) {
           itemType="https://schema.org/Review"
         >
           {/* Inline microdata properties (hidden from visual render) */}
-          <ReviewMicrodata data={data} />
+          {/* <ReviewMicrodata data={data} /> */}
 
           {/* Client component that renders the actual review UI */}
           {/* <ReviewChildComp serverData={data} params={params} /> */}

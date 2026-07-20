@@ -1,15 +1,4 @@
-/**
- * ReviewLayout.jsx — Main LIONXE Review Layout
- *
- * This is the primary frontend component that renders the entire
- * review page from dynamic Sanity data. It replaces BlogLayout
- * and implements the LIONXE visual language.
- *
- * Structure:
- *   Hero → Scorecard Bar → Executive Summary → Four Pillars →
- *   Rectification → Comprehensive Blog (PortableText) →
- *   FAQ → Author Bio → Related Reviews → CTA
- */
+
 
 "use client";
 
