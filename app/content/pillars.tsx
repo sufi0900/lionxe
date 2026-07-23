@@ -51,6 +51,7 @@ export interface PillarNextLink {
 
 export interface PillarContent {
   code: string;
+  slug: string;
   name: string;
   gateNumber: number;
   icon: LucideIcon | React.ComponentType<any> | any; // <--- Fixes icon type error for main pillar
