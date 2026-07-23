@@ -81,10 +81,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_ugauc93",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_adfk5bp",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_tu9lwxn",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_5prg4mn",
         form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "Jwo8Jvergs2aiHjIX"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "bEkDwHTfe-uaxKGlf"
       )
       .then(
         () => {

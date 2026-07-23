@@ -1,3 +1,5 @@
+
+//updated code
 // ─────────────────────────────────────────────────────────────────────────────
 // content/pillars.tsx
 // The single source of content for all four LIONXE™ pillar pages.
@@ -20,8 +22,8 @@ import type { LucideIcon } from "lucide-react";
 export interface PillarCriterion {
   id: string;
   name: string;
-  icon: LucideIcon | React.ComponentType<any> | any; // <--- Fixes icon type error for criteria
-  statement: string;
+icon: any; // <--- Fixed: Changed from 'string' to 'any' (accepts Lucide components)  
+statement: string;
   description: string;
 }
 
@@ -40,7 +42,7 @@ export interface PillarCaseComparison {
 export interface PillarMatrixItem {
   title: string;
   desc: string;
-  icon: LucideIcon | React.ComponentType<any> | any; // <--- Fixes icon type error for matrix items
+icon: any; // <--- Fixed: Changed from 'string' to 'any' (accepts Lucide components)
 }
 
 export interface PillarNextLink {
@@ -54,7 +56,8 @@ export interface PillarContent {
   slug: string;
   name: string;
   gateNumber: number;
-  icon: LucideIcon | React.ComponentType<any> | any; // <--- Fixes icon type error for main pillar
+icon: any; // <--- Fixed: Changed from 'string' to 'any' (accepts Lucide components) 
+ 
   tagline: string;
   heroParagraphs: string[];
   isHardGate?: boolean;
