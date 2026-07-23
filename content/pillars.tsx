@@ -1,3 +1,5 @@
+
+//updated code
 // ─────────────────────────────────────────────────────────────────────────────
 // content/pillars.tsx
 // The single source of content for all four LIONXE™ pillar pages.
@@ -20,9 +22,9 @@ import type { LucideIcon } from "lucide-react";
 export interface PillarCriterion {
   id: string;
   name: string;
-icon: string; // Changed from LucideIcon
-  statement: string;     // the rubric's formal scoring statement
-  description: string;   // natural-language elaboration for a public reader
+  icon: LucideIcon;   // ✅ proper type, not any
+statement: string;
+  description: string;
 }
 
 export interface PillarPrinciple {
@@ -40,7 +42,7 @@ export interface PillarCaseComparison {
 export interface PillarMatrixItem {
   title: string;
   desc: string;
- icon: string; // Changed from LucideIcon
+  icon: LucideIcon;   // ✅ proper type, not any
 }
 
 export interface PillarNextLink {
@@ -50,31 +52,36 @@ export interface PillarNextLink {
 }
 
 export interface PillarContent {
-  code: "L" | "IO" | "N" | "XE";
+  code: string;
   slug: string;
-  gateNumber: number;
-icon: string; // Changed from LucideIcon
   name: string;
+  gateNumber: number;
+  icon: LucideIcon;   // ✅ proper type, not any
+ 
   tagline: string;
+  heroParagraphs: string[];
+  isHardGate?: boolean;
   governingLaw: string;
   governingLawSummary: string;
-  heroParagraphs: string[];
-  isHardGate: boolean;        // true only for L — cascade termination on failure
-  genesis: { heading: string; paragraphs: string[] };
+  genesis: {
+    heading: string;
+    paragraphs: string[];
+  };
   criteria: PillarCriterion[];
   principles: PillarPrinciple[];
   caseComparison: PillarCaseComparison;
   matrixItems: PillarMatrixItem[];
   selfAuditQuestions: string[];
   universalApplicationNote: string;
-  nextPillar: PillarNextLink;
-
-  // SEO-only fields
+  nextPillar: {
+    slug: string;
+    name: string;
+    teaser: string;
+  };
   metaTitle: string;
   metaDescription: string;
   keywords: string[];
 }
-
 // ─────────────────────────────────────────────────────────────────────────────
 // L — LONG-TERM LOGIC
 // ─────────────────────────────────────────────────────────────────────────────
@@ -83,7 +90,7 @@ export const L_CONTENT: PillarContent = {
   code: "L",
   slug: "long-term-logic",
   gateNumber: 1,
-  icon: "Brain",
+  icon: Brain,
   name: "Long-Term Logic",
   tagline: "Durable benefit over the conditions that merely feel good today.",
   governingLaw: "The Post-Flood Collapse Rule",
