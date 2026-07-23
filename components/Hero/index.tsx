@@ -1,3 +1,4 @@
+//hero component for LIONXE landing page
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 "use client";

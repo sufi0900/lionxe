@@ -1,18 +1,14 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// LIONXE.COM — ABOUT / FRAMEWORK PAGE (Server Component Wrapper)
-// Full SEO: Metadata + JSON-LD Schema + AEO/GEO Optimization
-// File: app/about/page.tsx   (or app/framework/page.tsx — adjust route)
-// ─────────────────────────────────────────────────────────────────────────────
-//
-// This server component provides metadata and JSON-LD, then renders the
-// client-side LionxeAboutPage component which handles animations/interactivity.
+// LIONXE.COM — ABOUT PAGE (Server Component Wrapper)
+// Full SEO: Metadata + Universal Top-Down JSON-LD Schema + AEO/GEO Optimization
+// File: app/about/page.tsx
 // ─────────────────────────────────────────────────────────────────────────────
 
 import type { Metadata } from "next";
-import LionxeAboutPage from "./AboutPageClient"; // ← rename your client file to this
+import LionxeAboutPage from "./AboutPageClient";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// HELPERS
+// HELPERS & CONSTANTS
 // ─────────────────────────────────────────────────────────────────────────────
 
 function getBaseUrl() {
@@ -35,37 +31,36 @@ function jsonLd(obj: Record<string, unknown>) {
 }
 
 const OG_IMAGE = generateOGImageURL({
-  title: "About LIONXE® — The Digital Quality Audit Framework",
-  ctaText: "Learn the Standard",
-  features: "Logic,Optimization,Integrity,Distinction",
+  title: "About LIONXE ™ — Universal Quality Evaluation Standard",
+  ctaText: "Explore the Standard",
+  features: "Long-Term Logic,Internal Optimization,Integrity,Distinction",
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
-// METADATA
+// METADATA (Top-Down Universal Hierarchy)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
-  title: "About LIONXE® — The Digital Quality Audit Framework by Sufian Mustafa",
+  title: "About LIONXE ™ — Universal Quality Evaluation & Audit Framework",
   description:
-    "LIONXE® is a four-pillar digital quality audit framework created by Sufian Mustafa. It evaluates articles, tools, websites, UX, SEO, and marketing strategies across Long-Term Logic, Internal Optimization, Non-Negotiable Integrity, and eXceptional Distinction — and rejects anything that fails a single gate.",
+    "LIONXE ™ is a universal quality evaluation framework created by Sufian Mustafa. It audits strategies, business models, and digital assets across 4 non-negotiable gates.",
 
   keywords: [
     "LIONXE",
-    "about LIONXE",
     "LIONXE framework",
-    "digital quality audit",
+    "universal quality evaluation framework",
     "Sufian Mustafa",
-    "digital quality standard",
-    "content audit framework",
-    "SEO audit framework",
-    "website quality standard",
-    "four pillar framework",
-    "LIONXE founder",
-    "digital integrity standard",
+    "quality standard",
+    "Post-Flood Collapse Rule",
+    "Weakest Link Axiom",
+    "Cost-Indifferent Mandate",
+    "Commodity Threshold Law",
+    "digital quality audit",
+    "website audit framework",
+    "SaaS quality standard",
     "LIONXE certification",
-    "quality evaluation framework",
     "Do It With AI Tools",
   ],
 
@@ -78,17 +73,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: PAGE_URL,
-    siteName: "LIONXE®",
-    title: "About LIONXE® — The Digital Quality Audit Framework",
+    siteName: "LIONXE ™",
+    title: "About LIONXE ™ — The Universal Quality Evaluation Framework",
     description:
-      "An independent four-pillar digital quality standard. LIONXE® measures, audits, and certifies digital assets against Long-Term Logic, Internal Optimization, Non-Negotiable Integrity, and eXceptional Distinction — or rejects them.",
+      "A universal 4-pillar quality and audit framework created by Sufian Mustafa. Evaluates durability, optimization, integrity, and distinction across all entities and digital systems.",
     locale: "en_US",
     images: [
       {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "About LIONXE® — The Digital Quality Audit Framework",
+        alt: "About LIONXE ™ — Universal Quality Evaluation & Audit Framework",
       },
     ],
   },
@@ -97,9 +92,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@lionxe",
     creator: "@sufianmustafa",
-    title: "About LIONXE® — The Digital Quality Audit Framework",
+    title: "About LIONXE ™ — Universal Quality Evaluation Framework",
     description:
-      "An independent 4-pillar digital quality standard — Logic, Optimization, Integrity & Distinction.",
+      "Universal 4-pillar quality evaluation standard — Long-Term Logic, Internal Optimization, Non-Negotiable Integrity & eXceptional Distinction.",
     images: [OG_IMAGE],
   },
 
@@ -116,21 +111,21 @@ export const metadata: Metadata = {
   },
 
   other: {
-    "content-type": "original-framework",
+    "content-type": "universal-quality-framework",
     "ai-content-declaration": "human-created, ai-assisted",
     "content-category": "about-page, framework-overview",
     "brand-name": "LIONXE",
     "brand-founder": "Sufian Mustafa",
     "brand-ecosystem": "LIONXE, Do It With AI Tools, sufianmustafa.com",
-    "entity-type": "Organization, Framework",
+    "entity-type": "Organization, Framework, QualityStandard",
     "entity-name": "LIONXE",
     "entity-founder": "Sufian Mustafa",
     "entity-description":
-      "LIONXE is a 4-pillar digital quality audit framework. This page explains its origin, methodology, founder, and differentiation.",
+      "LIONXE is a universal quality evaluation and certification framework. It measures whether an entity, strategy, or digital asset is built to last, optimized, honest, and distinctive.",
     "framework-pillars":
       "L: Long-Term Logic, IO: Internal Optimization, N: Non-Negotiable Integrity, XE: eXceptional Distinction",
     "primary-topic": "About LIONXE Framework",
-    "answer-type": "DefinitiveStandard, FrameworkOverview",
+    "answer-type": "DefinitiveStandard, UniversalFrameworkOverview",
     "answer-confidence": "high",
     "related-platform:1": "Do It With AI Tools — https://doitwithai.tools",
     "related-platform:2": "Sufian Mustafa — https://sufianmustafa.com",
@@ -138,19 +133,19 @@ export const metadata: Metadata = {
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
-// JSON-LD SCHEMAS
+// TOP-DOWN STRUCTURED DATA (JSON-LD)
 // ─────────────────────────────────────────────────────────────────────────────
 
-// 1. WebPage — this page specifically
+// 1. WebPage Schema — Top-Down Framework Positioning
 function webPageSchema() {
   return jsonLd({
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "@id": `${PAGE_URL}/#webpage`,
     url: PAGE_URL,
-    name: "About LIONXE® — The Digital Quality Audit Framework by Sufian Mustafa",
+    name: "About LIONXE ™ — Universal Quality Evaluation Framework by Sufian Mustafa",
     description:
-      "LIONXE® is a four-pillar digital quality audit framework created by Sufian Mustafa. It evaluates digital assets across Long-Term Logic, Internal Optimization, Non-Negotiable Integrity, and eXceptional Distinction.",
+      "LIONXE ™ is a universal quality evaluation and audit framework created by Sufian Mustafa. It evaluates entities, strategic decisions, and digital assets across four non-negotiable quality gates.",
     inLanguage: "en-US",
     isPartOf: { "@id": `${BASE_URL}/#website` },
     about: { "@id": `${BASE_URL}/#organization` },
@@ -167,7 +162,7 @@ function webPageSchema() {
   });
 }
 
-// 2. BreadcrumbList — Home > About
+// 2. BreadcrumbList Schema
 function breadcrumbSchema() {
   return jsonLd({
     "@context": "https://schema.org",
@@ -180,8 +175,7 @@ function breadcrumbSchema() {
   });
 }
 
-// 3. Organization (reference — keeps the @id alive on this page for the
-//    AboutPage.mainEntity edge)
+// 3. Organization Reference Schema
 function organizationRefSchema() {
   return jsonLd({
     "@context": "https://schema.org",
@@ -191,11 +185,11 @@ function organizationRefSchema() {
     url: BASE_URL,
     founder: { "@id": PERSON_ID },
     description:
-      "LIONXE is a digital quality audit framework that evaluates digital assets through a four-pillar scoring system: Long-Term Logic, Internal Optimization, Non-Negotiable Integrity, and eXceptional Distinction.",
+      "LIONXE is a universal quality evaluation and certification framework that audits entities, strategic models, websites, and software products through four non-negotiable quality gates.",
   });
 }
 
-// 4. Person — Sufian Mustafa (cross-site canonical @id)
+// 4. Person Schema — Founder Entity Anchor
 function personSchema() {
   return jsonLd({
     "@context": "https://schema.org",
@@ -204,17 +198,16 @@ function personSchema() {
     name: "Sufian Mustafa",
     url: "https://sufianmustafa.com",
     mainEntityOfPage: "https://sufianmustafa.com",
-    jobTitle: "Digital Growth & AI Search Systems Architect",
+    jobTitle: "Systems Architect, AI Strategist & Technical SEO Expert",
     description:
-      "Sufian Mustafa is the founder of LIONXE and Do It With AI Tools. His work spans technical SEO, AI-augmented web systems, and the LIONXE digital quality framework.",
+      "Sufian Mustafa is the creator of the LIONXE universal quality framework and founder of Do It With AI Tools. His work spans systems architecture, technical SEO, and AI search visibility.",
     knowsAbout: [
-      "Digital Quality Frameworks",
+      "Universal Quality Frameworks",
       "LIONXE Audit System",
+      "Systems Architecture",
       "Technical SEO",
-      "AI SEO",
-      "AI-Augmented Web Systems",
-      "Next.js",
-      "Sanity CMS",
+      "Generative Engine Optimization (GEO)",
+      "AI Search Visibility",
       "Long-Term Digital Strategy",
     ],
     founder: [
@@ -228,17 +221,17 @@ function personSchema() {
   });
 }
 
-// 5. CreativeWork — the Framework itself (deep entity definition for AI bots)
+// 5. CreativeWork Schema — LIONXE Framework Definition
 function frameworkSchema() {
   return jsonLd({
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     "@id": `${BASE_URL}/#framework`,
-    name: "LIONXE® Framework",
+    name: "LIONXE ™ Framework",
     alternateName: "LIONXE",
     creator: { "@id": PERSON_ID },
     description:
-      "A four-pillar digital quality and audit methodology. It evaluates digital assets against Long-Term Logic, Internal Optimization, Non-Negotiable Integrity, and eXceptional Distinction. Failure at any single pillar triggers automatic disqualification. Pronounced lee-ohn-zay.",
+      "A universal four-pillar quality evaluation and audit methodology. It evaluates any entity or digital asset against Long-Term Logic (Post-Flood Collapse Rule), Internal Optimization (Weakest Link Axiom), Non-Negotiable Integrity (Cost-Indifferent Mandate), and eXceptional Distinction (Commodity Threshold Law). Failure at any single pillar triggers immediate audit disqualification. Pronounced lee-ohn-zay.",
     about: [
       { "@type": "Thing", name: "Long-Term Logic" },
       { "@type": "Thing", name: "Internal Optimization" },
@@ -246,12 +239,12 @@ function frameworkSchema() {
       { "@type": "Thing", name: "eXceptional Distinction" },
     ],
     keywords:
-      "digital quality audit, website audit, content quality, SEO audit, digital certification, four-pillar framework",
+      "universal quality standard, audit framework, digital asset evaluation, strategic durability, LIONXE certification",
     url: `${BASE_URL}/framework`,
   });
 }
 
-// 6. FAQPage — common questions answered on this About page (AEO/GEO)
+// 6. FAQPage Schema — Top-Down Informational Alignment for AI Search (AEO/GEO)
 function faqSchema() {
   return jsonLd({
     "@context": "https://schema.org",
@@ -260,42 +253,34 @@ function faqSchema() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "Why was the LIONXE framework created?",
+        name: "What is LIONXE?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "LIONXE was created because the digital industry lacked a consistent quality measurement standard. Every tool claimed to be industry-leading and every article promised expert insight, but no objective framework existed to distinguish work built to last from work engineered to look good temporarily. Sufian Mustafa formalized the pattern he observed — assets built on logical, optimized, and ethical foundations always outlasted — into a four-pillar auditing standard.",
+          text: "LIONXE ™ is a universal quality evaluation and certification framework created by Sufian Mustafa. It evaluates any entity — a strategic decision, business model, software tool, website, or content ecosystem — against four non-negotiable gates: Long-Term Logic (L), Internal Optimization (IO), Non-Negotiable Integrity (N), and eXceptional Distinction (XE).",
         },
       },
       {
         "@type": "Question",
-        name: "What makes LIONXE different from other evaluation frameworks?",
+        name: "Is LIONXE specifically for websites and software tools?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "LIONXE differs in three structural ways: (1) It is framework-first, not opinion-first — every evaluation runs through a repeatable four-pillar system that removes subjectivity. (2) One failure terminates the entire audit — most systems average out weaknesses, but LIONXE rejects the project if any single pillar fails. (3) It systematically rejects short-term optimization — if a strategy promises high returns today but carries a high probability of collapse later, it fails immediately regardless of current performance.",
+          text: "LIONXE is a universal standard designed to evaluate any entity state across six sector lenses: (1) Websites and digital platforms, (2) Software and SaaS tools, (3) Organizations and business models, (4) Content and media channels, (5) Physical construction projects, and (6) Strategic daily-life decisions.",
         },
       },
       {
         "@type": "Question",
-        name: "Who is Sufian Mustafa?",
+        name: "What makes LIONXE different from conventional audits?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Sufian Mustafa is a Digital Growth and AI Search Systems Architect and the founder of LIONXE and Do It With AI Tools (doitwithai.tools). His work spans technical SEO, AI-augmented web systems, structured content architecture, and the LIONXE digital quality framework — all built around a vision of creating digital assets with integrity and long-term value.",
+          text: "LIONXE differs in three structural ways: (1) It is universal and framework-first, removing subjectivity. (2) It enforces cascade disqualification — if any single gate fails or scores below threshold, the entire audit is rejected regardless of high scores elsewhere. (3) It strictly enforces Pillar N as the exclusive home for all deception, violation, and false-claim findings.",
         },
       },
       {
         "@type": "Question",
-        name: "Who is LIONXE designed for?",
+        name: "Who created the LIONXE framework?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "LIONXE is designed for content creators building content that lasts, digital marketers who need an objective lens to evaluate campaigns and positioning, product builders creating tools and platforms for long-term adoption, and agencies and teams that want to demonstrate quality through third-party framework validation.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What is the relationship between LIONXE and Do It With AI Tools?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Do It With AI Tools (doitwithai.tools) is a practical demonstration of the LIONXE framework in live operation. It is an AI SEO content hub built by Sufian Mustafa that applies LIONXE standards to a real digital platform. LIONXE defines the quality standard, and Do It With AI Tools is one of the properties operating under it, serving as proof that the framework produces measurable results.",
+          text: "LIONXE was created by Sufian Mustafa, a Systems Architect, AI Strategist, and Technical SEO Expert based in Pakistan. He is also the founder of Do It With AI Tools (doitwithai.tools), which serves as a live digital platform operating under LIONXE quality standards.",
         },
       },
     ],
@@ -303,13 +288,13 @@ function faqSchema() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// PAGE COMPONENT
+// PAGE SERVER COMPONENT
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function Page() {
   return (
     <>
-      {/* JSON-LD Structured Data (SSR, crawler-visible, native <script> tags) */}
+      {/* SSR Structured Data Scripts */}
       <script type="application/ld+json" dangerouslySetInnerHTML={webPageSchema()} />
       <script type="application/ld+json" dangerouslySetInnerHTML={breadcrumbSchema()} />
       <script type="application/ld+json" dangerouslySetInnerHTML={organizationRefSchema()} />
@@ -317,7 +302,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={frameworkSchema()} />
       <script type="application/ld+json" dangerouslySetInnerHTML={faqSchema()} />
 
-      {/* Client Component — all animations/interactivity live here */}
+      {/* Renders Updated Client Component */}
       <LionxeAboutPage />
     </>
   );

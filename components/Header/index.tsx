@@ -69,7 +69,7 @@ const Header = () => {
         />
 
         <div className="container mx-auto px-4 w-full">
-          {/* Symmetric vertical padding applied here (py-3.5 lg:py-4.5) to ensure exact vertical centering */}
+          {/* Symmetric vertical padding */}
           <div className="relative flex items-center justify-between w-full py-3.5 lg:py-4.5">
             
             {/* LEFT COLUMN: LOGO */}
@@ -103,8 +103,8 @@ const Header = () => {
                     group-hover:bg-white/[0.09]
                     group-hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_16px_42px_rgba(0,77,253,0.16)]
 
-                    sm:h-[52px] sm:w-[190px]
-                    lg:h-[54px] lg:w-[210px]
+                    sm:h-[52px] sm:w-[185px]
+                    lg:h-[54px] lg:w-[200px]
                   "
                 >
                   <Image
@@ -125,12 +125,12 @@ const Header = () => {
             </div>
 
             {/* CENTER COLUMN: DESKTOP NAVIGATION */}
-            <div className="hidden lg:flex lg:flex-grow lg:items-center lg:justify-center px-6">
+            <div className="hidden lg:flex lg:flex-grow lg:items-center lg:justify-center px-2 xl:px-6">
               <nav id="navbarCollapse" className="navbar">
                 <ul
                   className="
-                    flex items-center justify-center gap-1.5 rounded-[28px]
-                    border border-white/10 bg-white/[0.045] px-3 py-1.5
+                    flex items-center justify-center gap-1 xl:gap-1.5 rounded-[28px]
+                    border border-white/10 bg-white/[0.045] px-2.5 xl:px-3.5 py-1.5
                     shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_12px_42px_rgba(0,0,0,0.16)]
                     backdrop-blur-2xl
                   "
@@ -143,7 +143,7 @@ const Header = () => {
                           prefetch={true}
                           className={`
                             relative flex items-center justify-center overflow-hidden
-                            rounded-full border px-4 py-2 text-base
+                            rounded-full border px-2.5 xl:px-4 py-2 text-sm xl:text-base
                             transition-all duration-300 ease-in-out
                             ${
                               usePathName === menuItem.path
@@ -183,10 +183,10 @@ const Header = () => {
                             onClick={() => handleSubmenu(index)}
                             className={`
                               flex cursor-pointer items-center justify-between
-                              rounded-full border px-4 py-2
-                              text-base font-semibold transition-all duration-300
+                              rounded-full border px-2.5 xl:px-4 py-2
+                              text-sm xl:text-base font-semibold transition-all duration-300
                               ${
-                                menuItem.title === "Framework"
+                                menuItem.title === "Pillars"
                                   ? "border-[#004DFD]/20 bg-[#004DFD]/5 text-white shadow-[0_0_15px_rgba(0,77,253,0.1)] hover:bg-[#004DFD]/10 hover:border-[#004DFD]/40"
                                   : "border-transparent text-slate-300 hover:border-white/10 hover:bg-white/[0.06] hover:text-white"
                               }
@@ -194,8 +194,8 @@ const Header = () => {
                           >
                             <span className="relative z-10 flex items-center gap-1.5">
                               {menuItem.title}
-                              {/* Sleek Strategic LIONXE Badge for Framework item */}
-                              {menuItem.title === "Framework" && (
+                              {/* Strategic LIONXE Pulse Indicator for Pillars */}
+                              {menuItem.title === "Pillars" && (
                                 <span className="relative flex h-2 w-2">
                                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#004DFD] opacity-75"></span>
                                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#004DFD]"></span>
@@ -203,7 +203,7 @@ const Header = () => {
                               )}
                             </span>
 
-                            <span className="pl-2 transition-transform duration-300 group-hover:rotate-180">
+                            <span className="pl-1.5 xl:pl-2 transition-transform duration-300 group-hover:rotate-180">
                               <svg
                                 width="16"
                                 height="16"
@@ -279,12 +279,12 @@ const Header = () => {
             {/* RIGHT COLUMN: ACTION CONTROLS & MOBILE BUTTON */}
             <div className="flex items-center justify-end flex-shrink-0 gap-4">
               
-              {/* Premium Desktop Contact Button matched to LIONXE #004DFD */}
+              {/* Premium Desktop Contact Button */}
               <Link
                 href="/contact"
                 className="
                   hidden lg:inline-flex items-center justify-center rounded-full
-                  bg-[#004DFD] px-6 py-2.5 text-base font-semibold text-white
+                  bg-[#004DFD] px-5 xl:px-6 py-2.5 text-sm xl:text-base font-semibold text-white
                   shadow-[0_4px_20px_rgba(0,77,253,0.3)]
                   border border-white/10
                   transition-all duration-300 
@@ -336,12 +336,12 @@ const Header = () => {
               </button>
             </div>
 
-            {/* MOBILE DROPDOWN MENU */}
+            {/* MOBILE DROPDOWN MENU - CONSISTENT LEFT ALIGNMENT FIXED */}
             <div
               className={`
                 absolute right-0 top-full z-30 max-h-[80vh] w-[310px]
                 origin-top-right overflow-y-auto rounded-2xl border
-                border-[#1E3A8A]/50 bg-[#071127] px-5 py-5
+                border-[#1E3A8A]/50 bg-[#071127] px-4 py-4
                 shadow-[0_28px_100px_rgba(0,0,0,0.75)]
                 transition-all duration-300 lg:hidden
                 ${
@@ -368,7 +368,7 @@ const Header = () => {
               />
 
               <nav>
-                <ul className="block space-y-2">
+                <ul className="block space-y-1.5">
                   {menuData.map((menuItem, index) => (
                     <li key={index} className="group relative font-semibold">
                       {menuItem.path ? (
@@ -377,8 +377,7 @@ const Header = () => {
                           prefetch={true}
                           onClick={() => setNavbarOpen(false)}
                           className={`
-                            relative flex items-center justify-center overflow-hidden
-                            rounded-xl border px-4 py-3 text-sm
+                            flex w-full items-center justify-start rounded-xl border px-4 py-3 text-sm
                             transition-all duration-300
                             ${
                               usePathName === menuItem.path
@@ -405,15 +404,15 @@ const Header = () => {
                             onClick={() => handleSubmenu(index)}
                             className={`
                               flex w-full cursor-pointer items-center justify-between
-                              rounded-xl border px-4 py-3 text-sm
+                              rounded-xl border px-4 py-3 text-sm font-semibold
                               text-slate-300 transition-all duration-300
                               hover:border-white/10 hover:bg-white/[0.06] hover:text-white
-                              ${menuItem.title === "Framework" ? "bg-[#004DFD]/5 text-white border-[#004DFD]/15" : "border-transparent"}
+                              ${menuItem.title === "Pillars" ? "bg-[#004DFD]/5 text-white border-[#004DFD]/15" : "border-transparent"}
                             `}
                           >
                             <span className="flex items-center gap-2">
                               {menuItem.title}
-                              {menuItem.title === "Framework" && (
+                              {menuItem.title === "Pillars" && (
                                 <span className="h-1.5 w-1.5 rounded-full bg-[#004DFD]" />
                               )}
                             </span>
@@ -435,7 +434,7 @@ const Header = () => {
                           </button>
 
                           <div
-                            className={`mt-2 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] transition-all duration-300 ${
+                            className={`mt-1 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] transition-all duration-300 ${
                               openIndex === index
                                 ? "block max-h-96 opacity-100"
                                 : "hidden max-h-0 opacity-0"
@@ -448,7 +447,7 @@ const Header = () => {
                                 prefetch={true}
                                 onClick={() => setNavbarOpen(false)}
                                 className="
-                                  flex items-center px-5 py-3 text-sm font-medium
+                                  flex items-center justify-start px-5 py-3 text-sm font-medium
                                   text-slate-300 transition-all duration-200
                                   hover:bg-white/[0.06] hover:text-white
                                 "
@@ -462,7 +461,7 @@ const Header = () => {
                       )}
                     </li>
                   ))}
-                  {/* Dedicated Mobile Dropdown Contact Item */}
+                  {/* Dedicated Mobile Contact Item */}
                   <li className="pt-2">
                     <Link
                       href="/contact"

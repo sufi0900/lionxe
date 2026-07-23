@@ -1,28 +1,27 @@
+import Metadata from "next";
 import FAQClient from "./FAQClient";
 import { faqsData } from "./faqs";
 
-function getBaseUrl() {
+function getBaseUrl(): string {
   if (process.env.NODE_ENV === "production") {
     return "https://lionxe.com";
   }
-
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
   }
-
   return "http://localhost:3000";
 }
 
-function generateOGImageURL(params: Record<string, string>) {
+function generateOGImageURL(params: Record<string, string>): string {
   const baseURL = `${getBaseUrl()}/api/og`;
   const searchParams = new URLSearchParams(params);
   return `${baseURL}?${searchParams.toString()}`;
 }
 
 export const metadata = {
-  title: "Frequently Asked Questions | LIONXE™",
+  title: "Frequently Asked Questions | LIONXE™ Framework",
   description:
-    "Find clear answers to common questions about LIONXE™, the digital quality review framework for SEO, AI visibility, UX, content, trust, and execution excellence.",
+    "Find clear answers to common questions about LIONXE™, the digital quality review framework for SEO, AI search visibility, UX, content authority, and execution excellence.",
   authors: [{ name: "Sufian Mustafa" }],
   keywords: [
     "LIONXE FAQ",
@@ -30,7 +29,8 @@ export const metadata = {
     "digital quality review framework",
     "AI SEO framework",
     "SEO audit framework",
-    "AI visibility framework",
+    "AI search engine optimization",
+    "GEO framework",
     "digital asset review",
     "content quality framework",
     "UX review framework",
@@ -59,7 +59,7 @@ export const metadata = {
         }),
         width: 1200,
         height: 630,
-        alt: "LIONXE FAQ page",
+        alt: "LIONXE FAQ Page",
       },
     ],
   },

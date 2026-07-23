@@ -250,7 +250,7 @@ const CaseStudy01Page = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
             className="mb-6 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-black uppercase tracking-widest border-[#004DFD]/30 bg-[#004DFD]/[0.06] text-[#004DFD] dark:border-[#004DFD]/40 dark:bg-[#004DFD]/10 dark:text-[#7CA0FF]">
             <FileWarning className="h-5 w-5" />
-            LIONXE® Audit Report
+            LIONXE ™ Audit Report
           </motion.div>
 
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
@@ -278,7 +278,7 @@ const CaseStudy01Page = () => {
 
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }}
             className="text-sm text-slate-500 dark:text-slate-500">
-            Audited by <strong className="font-semibold text-slate-700 dark:text-slate-300">{AUDIT_META.auditor}</strong> · LIONXE® Framework
+            Audited by <strong className="font-semibold text-slate-700 dark:text-slate-300">{AUDIT_META.auditor}</strong> · LIONXE ™ Framework
           </motion.p>
         </div>
       </section>
@@ -425,8 +425,8 @@ const CaseStudy01Page = () => {
               <h2 className="text-xl font-bold text-slate-900 dark:text-white">A Note on This Case Study</h2>
             </div>
             <div className="space-y-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
-              <p>This audit was conducted with full internal access over an extended research period. It is presented here as an anonymized case study to illustrate how the LIONXE® Framework surfaces structural failures that are invisible from the outside but compounding in their damage over time.</p>
-              <p>The company described in this audit is not unique. Hundreds of digital agencies in Pakistan, India, the Philippines, and elsewhere operate variations of this same model. The failures identified are industry-wide, not specific to one operator. The LIONXE® Framework provides a systematic lens for identifying these failures before they become irreversible.</p>
+              <p>This audit was conducted with full internal access over an extended research period. It is presented here as an anonymized case study to illustrate how the LIONXE ™ Framework surfaces structural failures that are invisible from the outside but compounding in their damage over time.</p>
+              <p>The company described in this audit is not unique. Hundreds of digital agencies in Pakistan, India, the Philippines, and elsewhere operate variations of this same model. The failures identified are industry-wide, not specific to one operator. The LIONXE ™ Framework provides a systematic lens for identifying these failures before they become irreversible.</p>
               <p>If you recognize your own business model in this case study, the first step is not a complete rebuild. It is an honest audit of where you currently stand.</p>
             </div>
           </div>
@@ -467,7 +467,7 @@ const CaseStudy01Page = () => {
             <a href="/framework" className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-6 transition-all hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/[0.03]">
               <div>
                 <p className="text-sm font-bold uppercase tracking-wider text-slate-500">Explore</p>
-                <p className="text-lg font-extrabold text-slate-900 dark:text-white">The LIONXE® Framework</p>
+                <p className="text-lg font-extrabold text-slate-900 dark:text-white">The LIONXE ™ Framework</p>
               </div>
               <ArrowRight className="h-5 w-5 text-[#004DFD]" />
             </a>

@@ -24,16 +24,16 @@ function jsonLd(obj: Record<string, unknown>) {
 }
 
 const OG_IMAGE = generateOGImageURL({
-  title: "LIONXE® Audit — US Home Services Network",
+  title: "LIONXE ™ Audit — US Home Services Network",
   ctaText: "Read the Audit",
   features: "Score: 72/400,Does Not Pass,3 Blocking Issues,16 Criteria Evaluated",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-  title: "Case Study 01: US Home Services Digital Agency Audit | LIONXE®",
+  title: "Case Study 01: US Home Services Digital Agency Audit | LIONXE ™",
   description:
-    "LIONXE® audit of a Pakistan-based digital agency running hundreds of US-facing home services websites. Score: 72/400 — Does Not Pass. Three blocking issues across Long-Term Logic, sustainability, and manipulative search patterns. Full 16-criteria evaluation with evidence.",
+    "LIONXE ™ audit of a Pakistan-based digital agency running hundreds of US-facing home services websites. Score: 72/400 — Does Not Pass. Three blocking issues across Long-Term Logic, sustainability, and manipulative search patterns. Full 16-criteria evaluation with evidence.",
   keywords: [
     "LIONXE case study", "LIONXE audit report", "digital agency audit",
     "doorway page risk", "microsite SEO audit", "local SEO audit",
@@ -47,17 +47,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     url: PAGE_URL,
-    siteName: "LIONXE®",
-    title: "Case Study 01: US Home Services Digital Agency Audit | LIONXE®",
-    description: "Full LIONXE® audit: 72/400, Does Not Pass. A Pakistan-based agency running hundreds of US microsites — scored across 16 criteria with 3 blocking issues.",
+    siteName: "LIONXE ™",
+    title: "Case Study 01: US Home Services Digital Agency Audit | LIONXE ™",
+    description: "Full LIONXE ™ audit: 72/400, Does Not Pass. A Pakistan-based agency running hundreds of US microsites — scored across 16 criteria with 3 blocking issues.",
     locale: "en_US",
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "LIONXE® Audit Case Study — US Home Services Network" }],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "LIONXE ™ Audit Case Study — US Home Services Network" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@lionxe",
     creator: "@sufianmustafa",
-    title: "LIONXE® Audit: 72/400 — Does Not Pass",
+    title: "LIONXE ™ Audit: 72/400 — Does Not Pass",
     description: "Full case study: a digital agency's 87+ microsite network evaluated across 16 LIONXE criteria. 3 blocking issues.",
     images: [OG_IMAGE],
   },
@@ -91,9 +91,9 @@ function articleSchema() {
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${PAGE_URL}/#article`,
-    headline: "LIONXE® Audit Case Study: US-Facing Home Services Digital Agency",
+    headline: "LIONXE ™ Audit Case Study: US-Facing Home Services Digital Agency",
     alternativeHeadline: "Score: 72/400 — Does Not Pass — 3 Blocking Issues Detected",
-    description: "Full 16-criteria LIONXE® audit of a Pakistan-based digital agency running hundreds of US-facing home services microsites. Evaluated across Long-Term Logic, Internal Optimization, Non-Negotiable Integrity, and eXceptional Distinction.",
+    description: "Full 16-criteria LIONXE ™ audit of a Pakistan-based digital agency running hundreds of US-facing home services microsites. Evaluated across Long-Term Logic, Internal Optimization, Non-Negotiable Integrity, and eXceptional Distinction.",
     author: { "@id": PERSON_ID },
     publisher: { "@id": `${BASE_URL}/#organization` },
     datePublished: "2026-06-01",
@@ -120,7 +120,7 @@ function reviewSchema() {
       ratingValue: 72,
       bestRating: 400,
       worstRating: 0,
-      ratingExplanation: "LIONXE® certification score across 16 criteria (4 pillars × 4 criteria × 25 points). Minimum 300/400 required for conditional certification. This audit scored 72/400 with 3 blocking issues.",
+      ratingExplanation: "LIONXE ™ certification score across 16 criteria (4 pillars × 4 criteria × 25 points). Minimum 300/400 required for conditional certification. This audit scored 72/400 with 3 blocking issues.",
     },
     itemReviewed: {
       "@type": "Organization",

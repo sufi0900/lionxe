@@ -54,7 +54,7 @@ export default function StaticReviewsPageShell({ initialServerData, children }) 
               dark:border-[#004DFD]/30 dark:bg-[#004DFD]/10 dark:text-[#7CA0FF]"
           >
             <Shield className="mr-2 h-4 w-4" />
-            LIONXE® Evaluation Registry
+            LIONXE ™ Evaluation Registry
           </div>
 
           {/* Main headline */}
@@ -64,7 +64,7 @@ export default function StaticReviewsPageShell({ initialServerData, children }) 
               sm:text-4xl md:text-5xl lg:text-6xl"
           >
             <span className="relative inline-block mr-2 sm:mr-3">
-              LIONXE®
+              LIONXE ™
               <span
                 className="absolute bottom-1 left-0 h-1 sm:h-1.5 w-full rounded-full
                   bg-[#004DFD] opacity-70"

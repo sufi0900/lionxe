@@ -9,54 +9,29 @@ const menuData: Menu[] = [
   },
   {
     id: 2,
-    title: "Framework",
-    newTab: false,
-    submenu: [
-      {
-        id: 21,
-        title: "The LIONXE Framework",
-        path: "/framework",
-        newTab: false,
-      },
-      {
-        id: 22,
-        title: "Review Standards",
-        path: "/review-standards",
-        newTab: false,
-      },
-      {
-        id: 23,
-        title: "Scorecard System",
-        path: "/scorecard-system",
-        newTab: false,
-      },
-    ],
-  },
-  {
-    id: 3,
     title: "Pillars",
     newTab: false,
     submenu: [
       {
-        id: 31,
+        id: 21,
         title: "Logic & Longevity",
-        path: "/logic-longevity",
+        path: "/long-term-logic",
         newTab: false,
       },
       {
-        id: 32,
+        id: 22,
         title: "Internal Optimization",
         path: "/internal-optimization",
         newTab: false,
       },
       {
-        id: 33,
+        id: 23,
         title: "Non-Negotiable Integrity",
         path: "/non-negotiable-integrity",
         newTab: false,
       },
       {
-        id: 34,
+        id: 24,
         title: "Exceptional Distinction",
         path: "/exceptional-distinction",
         newTab: false,
@@ -64,36 +39,67 @@ const menuData: Menu[] = [
     ],
   },
   {
+    id: 3,
+    title: "Rubric",
+    path: "/rubric",
+    newTab: false,
+  },
+  {
     id: 4,
+    title: "Framework",
+    newTab: false,
+    submenu: [
+      {
+        id: 41,
+        title: "The LIONXE Framework",
+        path: "/framework",
+        newTab: false,
+      },
+      {
+        id: 42,
+        title: "Review Standards",
+        path: "/review-standards",
+        newTab: false,
+      },
+      {
+        id: 43,
+        title: "Scorecard System",
+        path: "/scorecard-system",
+        newTab: false,
+      },
+    ],
+  },
+  {
+    id: 5,
     title: "Audits",
     path: "/audits",
     newTab: false,
   },
   {
-    id: 5,
+    id: 6,
     title: "Founder",
     path: "/founder",
     newTab: false,
   },
   {
-    id: 6,
+    id: 7,
     title: "Company",
     newTab: false,
     submenu: [
       {
-        id: 61,
+        id: 71,
         title: "About LIONXE",
         path: "/about",
         newTab: false,
       },
       {
-        id: 62,
+        id: 72,
         title: "FAQ",
         path: "/faq",
         newTab: false,
       },
       {
-        id: 63,
+        id: 73,
         title: "Contact",
         path: "/contact",
         newTab: false,

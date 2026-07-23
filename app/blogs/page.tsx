@@ -101,13 +101,13 @@ async function getLionxeReviewsInitialData() {
 }
 
 export const metadata = {
-  title: "LIONXE® Architectural Audits & Platform Reviews | Do It With AI Tools",
+  title: "LIONXE ™ Architectural Audits & Platform Reviews | Do It With AI Tools",
   description: "Deep dive technical reviews and core pillar diagnostics of digital assets. Explore comprehensive architectural evaluations based on logic, integrity, and operational distinction.",
   author: "Sufian Mustafa",
   keywords: "LIONXE audit, architectural evaluation, platform reviews, SEO infrastructure audit, logic and longevity, digital asset integrity, technical framework reviews",
   
   openGraph: {
-    title: "LIONXE® Architectural Audits & Platform Reviews",
+    title: "LIONXE ™ Architectural Audits & Platform Reviews",
     description: "Deep dive technical reviews and core pillar diagnostics of digital assets evaluated by Sufian Mustafa.",
     type: "website",
     url: `${getBaseUrl()}/reviews`,
@@ -132,10 +132,10 @@ export const metadata = {
     creator: "@doitwithai",
     domain: "doitwithai.tools",
     url: `${getBaseUrl()}/reviews`,
-    title: "LIONXE® Architectural Audits & Platform Reviews",
+    title: "LIONXE ™ Architectural Audits & Platform Reviews",
     description: "Deep dive technical reviews and core pillar diagnostics of digital assets.",
     image: generateOGImageURL({
-      title: "LIONXE® Architectural Auditing Framework Hub",
+      title: "LIONXE ™ Architectural Auditing Framework Hub",
       ctaText: "View Audits",
       features: "Logic, Optimization, Integrity, Distinction",
     }),

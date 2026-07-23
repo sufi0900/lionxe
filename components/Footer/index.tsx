@@ -16,7 +16,7 @@ import {
 // Perfectly balanced 4-4-4 link architecture
 const footerLinks = {
   pillars: [
-  { label: "Logic & Longevity (L)", href: "/logic-longevity" },
+  { label: "Logic & Longevity (L)", href: "/long-term-logic" },
     { label: "Internal Optimization (IO)", href: "/internal-optimization" },
     { label: "Non-Negotiable Integrity (N)", href: "/non-negotiable-integrity" },
     { label: "Exceptional Distinction (XE)", href: "/exceptional-distinction" },
@@ -88,7 +88,7 @@ const socialLinks = [
   { label: "LinkedIn", href: "https://linkedin.com/in/sufianmustafa", icon: Linkedin },
   { label: "Facebook", href: "https://facebook.com/doitwithaitools", icon: Facebook },
   { label: "GitHub", href: "https://github.com/doitwithaitools", icon: Github },
-  { label: "Email", href: "mailto:contact@lionxeframework.com", icon: Mail },
+  { label: "Email", href: "mailto:contact@lionxe.com", icon: Mail },
 ];
 
 const Footer = () => {
@@ -178,7 +178,7 @@ const Footer = () => {
         </div>
 
         {/* Global CTA Banner Section */}
-        <div className="mt-14 overflow-hidden rounded-2xl border border-[#004DFD]/20 bg-[#071127] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.32)] sm:p-7">
+        {/* <div className="mt-14 overflow-hidden rounded-2xl border border-[#004DFD]/20 bg-[#071127] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.32)] sm:p-7">
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.24em] text-[#7A9FFF]">
@@ -202,7 +202,7 @@ const Footer = () => {
               <ArrowUpRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
-        </div>
+        </div> */}
 
         <div className="px-2 pt-6 sm:px-3 md:px-4">
           <TrustpilotInvite />

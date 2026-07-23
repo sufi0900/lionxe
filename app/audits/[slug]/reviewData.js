@@ -168,7 +168,7 @@ export function generateReviewMetadata(data, params) {
   }
 
   const imageUrl = data.mainImage ? urlForImage(data.mainImage).url() : null;
-  const canonicalUrl = `https://www.lionxeframework.com/audits/${params.slug}`;
+  const canonicalUrl = `https://www.lionxe.com/audits/${params.slug}`;
   const verdictText = data.verdict ? ` — Verdict: ${data.verdict}` : "";
 
   return {
@@ -176,7 +176,7 @@ export function generateReviewMetadata(data, params) {
     description:
       data.metadesc ||
       data.overview ||
-      `LIONXE® Architectural Audit of ${data.targetEntity}${verdictText}. Score: ${data.overallScore}/100.`,
+      `LIONXE ™ Architectural Audit of ${data.targetEntity}${verdictText}. Score: ${data.overallScore}/100.`,
     keywords: data.tags?.map((tag) => tag?.name).join(",") || "",
     authors: [
       {

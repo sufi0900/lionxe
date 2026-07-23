@@ -1,190 +1,140 @@
-// app/reviews/page.jsx
-import React from 'react';
-import StaticBlogsPageShell from '../blogs/StaticBlogsPageShell'; // Adjust path if shell is renamed
-import AllReviewsAggregated from './AllPosts';
-import Script from "next/script";
-import { client } from "@/sanity/lib/client";
-import { redisHelpers } from '@/app/lib/redis';
+// app/audits/page.tsx — Server Component (SEO + Schema layer)
+// STATIC for now. When dynamic, this file's body changes to fetch from
+// Sanity and map results to StaticAuditSummary shape before passing to
+// AuditsIndexClient (or a server-rendered equivalent) — metadata and
+// JSON-LD generation logic below stays identical either way.
 
-export const revalidate = 3600;
-export const dynamic = "force-dynamic";
+import type { Metadata } from "next";
+import AuditsIndexClient from "./AuditsIndexClient";
+import { STATIC_AUDITS } from "@/app/lib/audits-static-data";
 
 function getBaseUrl() {
-  if (process.env.NODE_ENV === 'production') {
-    return 'https://doitwithai.tools';
-  }
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
-  }
-  return 'http://localhost:3000';
+  if (process.env.NODE_ENV === "production") return "https://lionxe.com";
+  return process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000";
 }
 
-function generateOGImageURL(params) {
-  const baseURL = `${getBaseUrl()}/api/og`;
-  const searchParams = new URLSearchParams(params);
-  return `${baseURL}?${searchParams.toString()}`;
+function generateOGImageURL(params: Record<string, string>) {
+  return `${getBaseUrl()}/api/og?${new URLSearchParams(params).toString()}`;
 }
 
-const INITIAL_REVIEWS_LIMIT = 5;
-
-// --- Server-side data fetching function for LIONXE Reviews ---
-async function getLionxeReviewsInitialData() {
-  const cacheKey = 'reviewList:lionxe-reviews:main';
-  const startTime = Date.now();
-
-  try {
-    const cachedData = await redisHelpers.get(cacheKey);
-    if (cachedData) {
-      console.log(`[Redis Cache Hit] for ${cacheKey} in ${Date.now() - startTime}ms`);
-      return { ...cachedData, __source: 'server-redis' };
-    }
-  } catch (redisError) {
-    console.error(`Redis error for ${cacheKey}:`, redisError.message);
-  }
-
-  console.log(`[Sanity Fetch] for ${cacheKey} starting...`);
-
-  // Target only lionxeReview and extract strategic score/verdict fields
- const firstPageReviewsQuery = `*[_type == "lionxeReview"] | order(publishedAt desc)[0...${INITIAL_REVIEWS_LIMIT + 1}]{
-  _id,
-  _type,
-  title,
-  slug,
-  categoryTag,
-  categorySubTag,
-  targetEntity,
-  targetDomain,
-  leadAuditor,
-  publishedAt,
-  heroStatement,
-  verdict,
-  overallScore,
-  mainImage,
-  overview,
-  pillars[] {
-    pillarKey,
-    title,
-    score,
-    status
-  }
-}`;
-
-  const totalCountQuery = `count(*[_type == "lionxeReview"])`;
-
-  try {
-    const [firstPageBlogs, totalCount] = await Promise.all([
-      client.fetch(firstPageReviewsQuery, {}, { next: { tags: ["lionxeReview"] } }),
-      client.fetch(totalCountQuery, {}, { next: { tags: ["lionxeReview"] } })
-    ]);
-
-    const data = {
-      firstPageBlogs,
-      totalCount,
-      timestamp: Date.now()
-    };
-
-    console.log(`[Sanity Fetch] for ${cacheKey} completed in ${Date.now() - startTime}ms`);
-
-    if (data.firstPageBlogs?.length > 0) {
-      try {
-        await redisHelpers.set(cacheKey, data, { ex: 3600 });
-        console.log(`[Redis Cache Set] for ${cacheKey}`);
-      } catch (redisSetError) {
-        console.error(`Redis set error for ${cacheKey}:`, redisSetError.message);
-      }
-    }
-    return { ...data, __source: 'server-network' };
-  } catch (error) {
-    console.error(`Server-side fetch for LIONXE Reviews page failed:`, error.message);
-    return null;
-  }
+function jsonLd(obj: Record<string, unknown>) {
+  return { __html: JSON.stringify(obj).replace(/</g, "\\u003c") };
 }
 
-export const metadata = {
-  title: "LIONXE® Architectural Audits & Platform Reviews | Do It With AI Tools",
-  description: "Deep dive technical reviews and core pillar diagnostics of digital assets. Explore comprehensive architectural evaluations based on logic, integrity, and operational distinction.",
-  author: "Sufian Mustafa",
-  keywords: "LIONXE audit, architectural evaluation, platform reviews, SEO infrastructure audit, logic and longevity, digital asset integrity, technical framework reviews",
-  
+const BASE_URL = getBaseUrl();
+const PAGE_URL = `${BASE_URL}/audits`;
+const PERSON_ID = "https://sufianmustafa.com/#sufian-mustafa";
+
+const OG_IMAGE = generateOGImageURL({
+  title: "LIONXE™ Assessments & Certifications",
+  subtitle: "Every published audit, scored against one 16-criterion standard",
+  badge: "Audit Archive",
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// METADATA
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
+  title: "LIONXE™ Assessments & Certifications — All Published Audits",
+  description:
+    "All published LIONXE™ independent assessments and formal certifications. Each audit evaluates a digital entity, organization, or asset across 16 criteria and four pillars: Long-Term Logic, Internal Optimization, Non-Negotiable Integrity, and eXceptional Distinction.",
+  keywords: [
+    "LIONXE audits", "LIONXE assessments", "LIONXE certifications",
+    "digital quality audit", "independent website assessment",
+    "business audit standard", "Sufian Mustafa", "LIONXE audit archive",
+  ],
+  authors: [{ name: "Sufian Mustafa", url: "https://sufianmustafa.com" }],
+  creator: "Sufian Mustafa",
+  publisher: "LIONXE",
+  alternates: { canonical: "/audits" },
   openGraph: {
-    title: "LIONXE® Architectural Audits & Platform Reviews",
-    description: "Deep dive technical reviews and core pillar diagnostics of digital assets evaluated by Sufian Mustafa.",
     type: "website",
-    url: `${getBaseUrl()}/reviews`,
-    siteName: "doitwithai.tools",
-    images: [{
-      url: generateOGImageURL({
-        title: 'LIONXE Architectural Auditing Hub',
-        category: 'Platform Audits',
-        ctaText: 'Explore Framework Reviews',
-        features: '4 Pillars Analysis,Blueprint Recovery,Score Tracking',
-        bgColor: 'indigo',
-      }),
-      width: 1200,
-      height: 630,
-      alt: "LIONXE Architectural Audit Platform Hub"
-    }],
+    url: PAGE_URL,
+    siteName: "LIONXE™",
+    title: "LIONXE™ Assessments & Certifications — All Published Audits",
+    description: "Every published LIONXE™ audit — independent assessments and formal certifications — scored against the same 16-criterion standard.",
+    locale: "en_US",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "LIONXE™ Assessments & Certifications" }],
   },
-  
   twitter: {
     card: "summary_large_image",
-    site: "@doitwithai",
-    creator: "@doitwithai",
-    domain: "doitwithai.tools",
-    url: `${getBaseUrl()}/reviews`,
-    title: "LIONXE® Architectural Audits & Platform Reviews",
-    description: "Deep dive technical reviews and core pillar diagnostics of digital assets.",
-    image: generateOGImageURL({
-      title: "LIONXE® Architectural Auditing Framework Hub",
-      ctaText: "View Audits",
-      features: "Logic, Optimization, Integrity, Distinction",
-    }),
+    site: "@lionxe",
+    creator: "@sufianmustafa",
+    title: "LIONXE™ Assessments & Certifications",
+    description: "All published LIONXE™ audits, scored against one 16-criterion standard.",
+    images: [OG_IMAGE],
   },
-
-  alternates: {
-    canonical: `${getBaseUrl()}/reviews`,
+  robots: {
+    index: true, follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" as const, "max-snippet": -1, "max-video-preview": -1 },
+  },
+  other: {
+    "content-type": "audit-archive-index",
+    "ai-content-declaration": "human-created, ai-assisted",
+    "brand-name": "LIONXE",
+    "brand-founder": "Sufian Mustafa",
+    "total-audits": String(STATIC_AUDITS.length),
+    "rubric-version": "LIONXE Audit Rubric v1.0",
   },
 };
 
-export default async function ReviewsPage() {
-  const initialServerData = await getLionxeReviewsInitialData();
+// ─────────────────────────────────────────────────────────────────────────────
+// JSON-LD
+// ─────────────────────────────────────────────────────────────────────────────
 
-  function breadcrumbSchema() {
-    return {
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": `${getBaseUrl()}/`
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Reviews",
-            "item": `${getBaseUrl()}/reviews`
-          }
-        ]
-      })
-    };
-  }
+function collectionPageSchema() {
+  return jsonLd({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${PAGE_URL}/#collection`,
+    name: "LIONXE™ Assessments & Certifications",
+    description: "All published LIONXE™ independent assessments and certification audits.",
+    url: PAGE_URL,
+    author: { "@id": PERSON_ID },
+    publisher: { "@id": `${BASE_URL}/#organization` },
+    isPartOf: { "@type": "CreativeWork", "@id": `${BASE_URL}/#framework`, name: "LIONXE™ Framework" },
+  });
+}
 
+function itemListSchema() {
+  return jsonLd({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${PAGE_URL}/#itemlist`,
+    itemListOrder: "https://schema.org/ItemListOrderDescending",
+    numberOfItems: STATIC_AUDITS.length,
+    itemListElement: STATIC_AUDITS.map((audit, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `${BASE_URL}/audits/${audit.slug}`,
+      name: audit.title,
+    })),
+  });
+}
+
+function breadcrumbSchema() {
+  return jsonLd({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${PAGE_URL}/#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home",   item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Audits", item: PAGE_URL },
+    ],
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+export default function Page() {
   return (
     <>
-      <Script
-        id="breadcrumb-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={breadcrumbSchema()}
-      />
-      
-      <StaticBlogsPageShell initialServerData={initialServerData}>
-        <AllReviewsAggregated
-          initialServerData={initialServerData}
-        />
-      </StaticBlogsPageShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={collectionPageSchema()} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={itemListSchema()} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={breadcrumbSchema()} />
+      <AuditsIndexClient />
     </>
   );
 }
