@@ -32,7 +32,7 @@ export default function PillarPageClient({ content: c }: Props) {
   const genesisInView = useInView(genesisRef, { once: true, margin: "-100px" });
   const caseInView = useInView(caseRef, { once: true, margin: "-100px" });
 
-  const Icon = c.icon as LucideIcon;
+  const Icon = c.icon as unknown as LucideIcon;
 
   return (
     <main className="relative bg-white dark:bg-[#050B1F]">
@@ -143,7 +143,7 @@ export default function PillarPageClient({ content: c }: Props) {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {c.criteria.map((crit, i) => {
-              const CritIcon = crit.icon as LucideIcon;
+              const CritIcon = crit.icon as unknown as LucideIcon;
               return (
                 <motion.div key={crit.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -246,7 +246,7 @@ export default function PillarPageClient({ content: c }: Props) {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {c.matrixItems.map((item, i) => {
-              const MIcon = item.icon as LucideIcon;
+              const MIcon = item.icon as unknown as LucideIcon;
               return (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
