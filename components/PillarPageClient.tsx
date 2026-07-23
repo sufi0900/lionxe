@@ -18,7 +18,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   CheckCircle2, XCircle, AlertTriangle, Lightbulb,
-  ArrowRight, Gauge, Flag,
+  ArrowRight, Gauge, Flag, type LucideIcon,
 } from "lucide-react";
 import type { PillarContent } from "@/content/pillars";
 
@@ -32,7 +32,7 @@ export default function PillarPageClient({ content: c }: Props) {
   const genesisInView = useInView(genesisRef, { once: true, margin: "-100px" });
   const caseInView = useInView(caseRef, { once: true, margin: "-100px" });
 
-  const Icon = c.icon;
+  const Icon = c.icon as LucideIcon;
 
   return (
     <main className="relative bg-white dark:bg-[#050B1F]">
@@ -111,10 +111,6 @@ export default function PillarPageClient({ content: c }: Props) {
               </div>
             </motion.div>
 
-            {/* Governing law visual panel — replaces a generic stock photo with the
-                actual content that matters: the pillar's own governing law, rendered
-                as a branded panel. Dynamic-ready: swap for a real illustration later
-                without touching layout. */}
             <motion.div initial={{ opacity: 0, x: 30 }} animate={genesisInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }}
               className="relative">
               <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-[#004DFD]/5 via-white to-slate-50 p-10 shadow-2xl dark:border-white/10 dark:from-[#004DFD]/10 dark:via-[#0A0F1E] dark:to-[#070D1B] sm:p-12">
@@ -147,7 +143,7 @@ export default function PillarPageClient({ content: c }: Props) {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {c.criteria.map((crit, i) => {
-              const CritIcon = crit.icon;
+              const CritIcon = crit.icon as LucideIcon;
               return (
                 <motion.div key={crit.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -250,7 +246,7 @@ export default function PillarPageClient({ content: c }: Props) {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {c.matrixItems.map((item, i) => {
-              const MIcon = item.icon;
+              const MIcon = item.icon as LucideIcon;
               return (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
