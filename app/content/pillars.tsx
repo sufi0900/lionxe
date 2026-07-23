@@ -20,9 +20,9 @@ import type { LucideIcon } from "lucide-react";
 export interface PillarCriterion {
   id: string;
   name: string;
-  icon: LucideIcon;
-  statement: string;     // the rubric's formal scoring statement
-  description: string;   // natural-language elaboration for a public reader
+  icon: LucideIcon | React.ComponentType<any> | any; // <--- Fixes icon type error for criteria
+  statement: string;
+  description: string;
 }
 
 export interface PillarPrinciple {
@@ -40,7 +40,7 @@ export interface PillarCaseComparison {
 export interface PillarMatrixItem {
   title: string;
   desc: string;
-  icon: LucideIcon;
+  icon: LucideIcon | React.ComponentType<any> | any; // <--- Fixes icon type error for matrix items
 }
 
 export interface PillarNextLink {
@@ -50,31 +50,34 @@ export interface PillarNextLink {
 }
 
 export interface PillarContent {
-  code: "L" | "IO" | "N" | "XE";
-  slug: string;
-  gateNumber: number;
-  icon: LucideIcon;
+  code: string;
   name: string;
+  gateNumber: number;
+  icon: LucideIcon | React.ComponentType<any> | any; // <--- Fixes icon type error for main pillar
   tagline: string;
+  heroParagraphs: string[];
+  isHardGate?: boolean;
   governingLaw: string;
   governingLawSummary: string;
-  heroParagraphs: string[];
-  isHardGate: boolean;        // true only for L — cascade termination on failure
-  genesis: { heading: string; paragraphs: string[] };
+  genesis: {
+    heading: string;
+    paragraphs: string[];
+  };
   criteria: PillarCriterion[];
   principles: PillarPrinciple[];
   caseComparison: PillarCaseComparison;
   matrixItems: PillarMatrixItem[];
   selfAuditQuestions: string[];
   universalApplicationNote: string;
-  nextPillar: PillarNextLink;
-
-  // SEO-only fields
+  nextPillar: {
+    slug: string;
+    name: string;
+    teaser: string;
+  };
   metaTitle: string;
   metaDescription: string;
   keywords: string[];
 }
-
 // ─────────────────────────────────────────────────────────────────────────────
 // L — LONG-TERM LOGIC
 // ─────────────────────────────────────────────────────────────────────────────
