@@ -6,9 +6,9 @@
  * and implements the LIONXE visual language.
  *
  * Structure:
- *   Hero → Scorecard Bar → Executive Summary → Four Pillars →
- *   Rectification → Comprehensive Blog (PortableText) →
- *   FAQ → Author Bio → Related Reviews → CTA
+ * Hero → Scorecard Bar → Executive Summary → Four Pillars →
+ * Rectification → Comprehensive Blog (PortableText) →
+ * FAQ → Author Bio → Related Reviews → CTA
  */
 
 "use client";
@@ -19,8 +19,8 @@ import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import createReviewPortableTextComponents from "./createReviewPortableTextComponents";
 import FAQSection from "@/app/ai-tools/[slug]/FAQSection";
-  import CommentSection from '@/app/ai-tools/[slug]/CommentSection'; // Adjust path as needed
-  import AuthorBioCard from '@/app/ai-tools/[slug]/AuthorBioCard'; // Adjust path as needed
+import CommentSection from "@/app/ai-tools/[slug]/CommentSection";
+import AuthorBioCard from "@/app/ai-tools/[slug]/AuthorBioCard";
 
 // Icons
 import {
@@ -43,12 +43,6 @@ import {
   Share2,
   Printer,
 } from "lucide-react";
-
-// Lazy-loaded non-critical components (same pattern as BlogLayout)
-// const FAQSection = lazy(() => import("./FAQSection"));
-// const AuthorBioCard = lazy(() => import("./AuthorBioCard"));
-// const CommentSection = lazy(() => import("./CommentSection"));
-// const RelatedReviewsSection = lazy(() => import("./RelatedReviewsSection"));
 
 // ─────────────────────────────────────────────────────────────────────────────
 // CONSTANTS & MAPPINGS
@@ -449,7 +443,7 @@ export default function ReviewLayout({
             {data.categorySubTag && (
               <>
                 <span className="text-xs text-slate-400 dark:text-slate-500">
-                  //
+                  {"//"}
                 </span>
                 <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   {data.categorySubTag}
