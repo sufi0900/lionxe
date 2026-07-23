@@ -11,20 +11,20 @@ const BRAND = "#014FFD";
 const BRAND_TEXT = "#8EA7FF";
 
 const REVIEW_AREAS = [
-  "Website quality review",
-  "Content / AI SEO review",
-  "UX & trust evaluation",
-  "Tool or product review",
+  "Website & software quality review",
+  "Content / AI SEO & search visibility",
+  "UX, trust & architecture evaluation",
+  "Strategic decision or product review",
 ];
 
 const CONTACT_POINTS = [
   {
-    label: "Review Scope",
-    value: "Content, SEO, UX, Tools, Websites",
+    label: "Evaluation Scope",
+    value: "Websites, Content, Software, Strategy",
   },
   {
     label: "Framework",
-    value: "L · IO · N · XE",
+    value: "L · IO · N · XE (Universal Standard)",
   },
   {
     label: "Response",
@@ -170,15 +170,15 @@ const Contact = () => {
           <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
             Request a{" "}
             <span className="bg-gradient-to-r from-[#8EA7FF] via-white to-[#5271FF] bg-clip-text text-transparent">
-              Digital Quality Review
+              Universal Quality Review
             </span>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-            Send your inquiry for a website, content, SEO, UX, tool, or digital
-            strategy review through the LIONXE framework — built on Long-Term
-            Logic, Internal Optimization, No Negativity, and Exceptional
-            Execution.
+            Submit your asset, project, software, content strategy, or complex decision
+            for evaluation through the universal LIONXE framework — governed by
+            Long-Term Logic, Internal Optimization, Non-Negotiable Integrity, and
+            Exceptional Distinction.
           </p>
         </div>
 
@@ -194,11 +194,11 @@ const Contact = () => {
                   Send a request
                 </p>
                 <h2 className="text-2xl font-black text-white sm:text-3xl">
-                  Tell us what you want reviewed
+                  Tell us what you want evaluated
                 </h2>
                 <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400">
-                  Share the URL, asset type, goal, and any specific concern you
-                  want LIONXE to evaluate.
+                  Share the URL, architectural scope, strategic goal, or decision
+                  parameters you want LIONXE to audit.
                 </p>
               </div>
 
@@ -376,14 +376,14 @@ const Contact = () => {
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-300">
                   ✓
                 </span>
-                Private inquiry
+                Private inquiry & evaluation
               </div>
 
               <div className="flex items-center gap-2">
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#014FFD]/15 text-[#8EA7FF]">
                   ✓
                 </span>
-                Framework-based response
+                Universal framework response
               </div>
             </div>
           </div>
@@ -397,7 +397,7 @@ const Contact = () => {
                     Review Areas
                   </p>
                   <h3 className="mt-2 text-2xl font-black text-white">
-                    What LIONXE reviews
+                    What LIONXE evaluates
                   </h3>
                 </div>
 
@@ -451,13 +451,13 @@ const Contact = () => {
               </p>
 
               <h3 className="mt-3 text-2xl font-black text-white">
-                Include the asset URL
+                Include relevant context
               </h3>
 
               <p className="mt-3 text-sm leading-7 text-slate-300">
-                For better review quality, include the page, website, tool,
-                article, or digital asset URL with a short note about what you
-                want evaluated.
+                For a precise evaluation, include your URL, project documentation,
+                software link, or strategic decision outline with a brief note on what
+                you need reviewed.
               </p>
             </div>
           </aside>
@@ -477,5 +477,7 @@ const Contact = () => {
     </main>
   );
 };
+
+
 
 export default Contact;
