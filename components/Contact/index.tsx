@@ -82,7 +82,7 @@ const Contact = () => {
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "sservice_amokb3m",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_3nknxp9",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_tmgxquq",
         form.current,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "VHixYh9RiqM7PcIcG"
       )
