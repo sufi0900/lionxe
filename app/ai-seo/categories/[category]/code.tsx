@@ -53,13 +53,8 @@ const SubcategoryContent = ({ posts, subcategoryInfo, totalPosts }) => {
     posts.map((post) => (
       <div key={post._id} className="w-full sm:w-1/2 lg:w-1/3 px-3 mb-6">
         <CardComponent
-          readTime={post.readTime?.minutes}
-          overview={post.overview}
-          title={post.title}
-          tags={post.tags}
-          mainImage={post.mainImage}
-          slug={`/ai-seo/${post.slug.current}`}
-          publishedAt={post.publishedAt}
+          post={post}
+          pageSlugPrefix="/ai-seo"
         />
       </div>
     ))
