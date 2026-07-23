@@ -22,7 +22,7 @@ import type { LucideIcon } from "lucide-react";
 export interface PillarCriterion {
   id: string;
   name: string;
-icon: any; // <--- Fixed: Changed from 'string' to 'any' (accepts Lucide components)  
+  icon: LucideIcon;   // ✅ proper type, not any
 statement: string;
   description: string;
 }
@@ -42,7 +42,7 @@ export interface PillarCaseComparison {
 export interface PillarMatrixItem {
   title: string;
   desc: string;
-icon: any; // <--- Fixed: Changed from 'string' to 'any' (accepts Lucide components)
+  icon: LucideIcon;   // ✅ proper type, not any
 }
 
 export interface PillarNextLink {
@@ -56,7 +56,7 @@ export interface PillarContent {
   slug: string;
   name: string;
   gateNumber: number;
-icon: any; // <--- Fixed: Changed from 'string' to 'any' (accepts Lucide components) 
+  icon: LucideIcon;   // ✅ proper type, not any
  
   tagline: string;
   heroParagraphs: string[];
