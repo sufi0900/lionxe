@@ -42,7 +42,8 @@ const TOC = [
   },
 ];
 
-export function TableOfContentsContent() {
+// Removed 'export' keyword here to comply with Next.js App Router standards
+function TableOfContentsContent() {
   return (
     <>
       <div className="mb-10 mt-4">
